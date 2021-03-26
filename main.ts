@@ -1,34 +1,27 @@
 input.onButtonPressed(Button.A, function () {
-    A = 1
-    B = 0
+    Mode = 1
 })
 input.onButtonPressed(Button.B, function () {
-    B = 1
-    A = 0
+    Mode = 2
 })
 // Sets the program
-let B = 0
+let Mode = 0
+Mode = 0
 let A = 0
-let Power = 1
-A = 0
-B = 0
+let B = 0
 let Green = 0
 let Yellow = 0
 let Red = 0
 basic.forever(function () {
-    if (Green == 0) {
-        if (Yellow == 0) {
-            if (Red == 0) {
-                Red = 1
-                basic.pause(1000)
-                Red = 0
-                basic.pause(1000)
-            }
-        }
+    if (Mode == 0) {
+        Red = 1
+        basic.pause(1000)
+        Red = 0
+        basic.pause(1000)
     }
 })
 basic.forever(function () {
-    while (A == 1) {
+    while (Mode == 1) {
         Red = 1
         basic.pause(20000)
         Red = 0
